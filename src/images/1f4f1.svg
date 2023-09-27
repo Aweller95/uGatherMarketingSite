@@ -1,0 +1,16 @@
+<svg width="22" height="36" viewBox="0 0 22 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 36C4 36 0 36 0 32V4C0 4 0 0 4 0H18C18 0 22 0 22 4V32C22 32 22 36 18 36H4Z" fill="#31373D"/>
+<path d="M2 5H20V31H2V5Z" fill="#55ACEE"/>
+<rect x="4" y="7" width="4" height="4" rx="1" fill="white" fill-opacity="0.3"/>
+<rect x="9" y="7" width="4" height="4" rx="1" fill="white" fill-opacity="0.3"/>
+<rect x="14" y="7" width="4" height="4" rx="1" fill="white" fill-opacity="0.3"/>
+<rect x="4" y="12" width="4" height="4" rx="1" fill="white" fill-opacity="0.3"/>
+<rect x="9" y="12" width="4" height="4" rx="1" fill="#FFC911"/>
+<rect x="14" y="12" width="4" height="4" rx="1" fill="white" fill-opacity="0.3"/>
+<rect x="4" y="17" width="4" height="4" rx="1" fill="white" fill-opacity="0.3"/>
+<rect x="9" y="17" width="4" height="4" rx="1" fill="white" fill-opacity="0.3"/>
+<rect x="14" y="17" width="4" height="4" rx="1" fill="white" fill-opacity="0.3"/>
+<rect x="4" y="22" width="4" height="4" rx="1" fill="white" fill-opacity="0.3"/>
+<rect x="9" y="22" width="4" height="4" rx="1" fill="white" fill-opacity="0.3"/>
+<rect x="14" y="22" width="4" height="4" rx="1" fill="white" fill-opacity="0.3"/>
+</svg>

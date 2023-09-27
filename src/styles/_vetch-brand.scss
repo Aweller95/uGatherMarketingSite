@@ -1,0 +1,58 @@
+/* STYLE OVERRIDES */
+html, body {
+    height:100%;
+    width:100%;
+    scroll-padding-top: 6rem;
+}
+body {
+    background: $white;
+    color: $vetch-secondary;
+    overflow-x: hidden;
+    padding-top:80px;
+}
+::selection {
+    background: $vetch-primary; /* WebKit/Blink Browsers */
+    color:$vetch-secondary;
+}
+::-moz-selection {
+    background: $vetch-primary; /* Gecko Browsers */
+    color:$vetch-secondary;
+}
+
+/* LINK STYLES */
+a:link {
+    color: $vetch-info;
+    text-decoration: underline;
+    font-weight: 500;
+}
+/* visited link */
+a:visited {
+    color: $vetch-info;
+    text-decoration: underline;
+}
+/* mouse over link */
+a:hover {
+    color: darken($vetch-info, 10%);
+    text-decoration: underline;
+}
+/* selected link */
+a:active {
+    color: darken($vetch-info, 10%);
+    text-decoration: underline;
+}
+a:focus{
+    box-shadow:inset 0 0 0 1px $vetch-secondary, 0 0 0 3px $vetch-primary;
+    outline:none;
+}
+.collapse {
+    padding:0!important;
+    margin:0!important;
+}
+#donate, #donate-message, #donate-summary {
+    > .grid-container {
+        padding-top:1.5rem;
+    }
+}
+.hide {
+    display:none!important;
+}

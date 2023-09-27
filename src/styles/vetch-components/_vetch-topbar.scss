@@ -1,0 +1,233 @@
+.no-js {
+  @include breakpoint(small only) {
+    .top-bar {
+      display: none;
+    }
+  }
+  @include breakpoint(medium) {
+    .title-bar {
+      display: none;
+    }
+  }
+}
+.vetch-topbar-nav {
+    position:fixed;
+    width:100%;
+    top:0;
+    background: $vetch-primary;
+    z-index: 1000;
+    -webkit-box-shadow:inset 0px -2px 0px 0px $white;
+    -moz-box-shadow:inset 0px -2px 0px 0px $white;
+    box-shadow:inset 0px -2px 0px 0px $white;
+}
+.vetch-topbar {
+    min-height:80px;
+    background:none;
+    padding:0;
+    text-align: center;
+    .top-bar-left {
+        .logo-link {
+            display: inline-block;
+            float:left;
+        }
+    }
+    .vetch-logo {
+        margin:1.7rem 1.7rem 1.7rem 0;
+        @include breakpoint(small only) {
+            margin:1.7rem 1.7rem 1.7rem 1rem;
+        }
+        float:left;
+        height:1.5rem;
+        width:114px;
+        height:24px;
+        img {
+            height:1.5rem;
+            width:114px;
+            height:24px;
+            position:relative;
+            top:-2px;
+        }
+    }
+    ul {
+        background:none;
+    }
+    .menu {
+        min-height:3rem;
+        margin:1rem 0;
+        display:inline-block;
+        @include breakpoint(small only) {
+            margin:0!important;
+            display:block;
+        }
+        li {
+            margin:0 0.5rem!important;
+            display:inline-block;
+              @include breakpoint(small only) {
+                margin:0!important;
+                text-align:left;
+              }
+            position:relative;
+            a {
+                padding:1rem 0.5rem!important;
+                @include breakpoint(small only) {
+                    padding:1.25rem 0.5rem!important;
+                }
+                text-decoration:none;
+                font-weight: bold;
+                border-radius:$global-radius;
+                color:$vetch-secondary!important;
+                &:before {
+                    display:none;
+                    content: '';
+                    width:100%;
+                    height:3px;
+                    background:$white;
+                    position:absolute;
+                    bottom:0;
+                    left:0;
+                }
+                &:hover {
+                    color: $vetch-secondary;
+                    &:before {
+                        display:block;
+                        @include breakpoint(small only) {
+                            display:none;
+                        }
+                    }
+                }
+            }
+            &.is-active {
+                a {
+                    color:$vetch-secondary;
+                    background:none;
+                    &:before {
+                        display:block;
+                        background:$vetch-success;
+                        @include breakpoint(small only) {
+                            display:none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .dropdown.menu > li.opens-right > .is-dropdown-submenu {
+        z-index:4;
+    }
+    .top-bar-left, .top-bar-right {
+        min-height:80px;
+    }
+    .top-bar-right {
+        button {
+            margin:1rem 0!important;
+            min-width:160px;
+            @include breakpoint(small only) {
+                width:100%;
+            }
+        }
+        @include breakpoint(small only) {
+            margin-bottom:1rem;
+        }
+    }
+    &.title-bar {
+        .menu-icon {
+            width:48px;
+            height:48px;
+            background-image: url('../images/menu-icon.svg');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size:70%;
+            position: absolute;
+            right:0;
+            &:after {
+                display:none;
+            }
+            &.is-active {
+                background-image: url('../images/close.svg')!important;
+            }
+        }
+    }
+    @include breakpoint(small only) {
+        .top-bar-left .vetch-logo {
+            display: none;
+        }
+        .dropdown {
+            flex-wrap: nowrap;
+            flex-direction: column;
+        }
+    }
+}
+
+/* MENU SELECTED STATE TEMP FIX */
+.homepage {
+    .menu {
+        li.home {
+            a {
+                &:before {
+                    display:block;
+                    content: '';
+                    width:100%;
+                    height:3px;
+                    background:$vetch-secondary;
+                    position:absolute;
+                    bottom:0;
+                    left:0;
+                }
+            }
+        }
+    }
+}
+.charities {
+    .menu {
+        li.charities {
+            a {
+                &:before {
+                    display:block;
+                    content: '';
+                    width:100%;
+                    height:3px;
+                    background:$vetch-secondary;
+                    position:absolute;
+                    bottom:0;
+                    left:0;
+                }
+            }
+        }
+    }
+}
+.events, .event {
+    .menu {
+        li.events {
+            a {
+                &:before {
+                    display:block;
+                    content: '';
+                    width:100%;
+                    height:3px;
+                    background:$vetch-secondary;
+                    position:absolute;
+                    bottom:0;
+                    left:0;
+                }
+            }
+        }
+    }
+}
+.help-centre, .help-centre-create, .help-centre-promote, .help-centre-place, .help-centre-collect, .help-centre-notify, .help-centre-live, .help-centre-join, .help-centre-pay {
+    .menu {
+        li.help {
+            a {
+                &:before {
+                    display:block;
+                    content: '';
+                    width:100%;
+                    height:3px;
+                    background:$vetch-secondary;
+                    position:absolute;
+                    bottom:0;
+                    left:0;
+                }
+            }
+        }
+    }
+}

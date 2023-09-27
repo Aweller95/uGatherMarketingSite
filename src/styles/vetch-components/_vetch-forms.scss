@@ -1,0 +1,299 @@
+.vetch-form-header {
+    width:100%;
+    margin-bottom:2rem;
+    &.vetch-end-form-header {
+        h1 {
+            font-size:2.6rem;
+            text-align: center;
+        }
+        p {
+            text-align: center;
+        }
+    }
+}
+label {
+    font-size:1rem;
+    font-weight:700;
+    color:$vetch-secondary;
+    margin-bottom:0.2rem;
+    user-select: none; /* supported by Chrome and Opera */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+}
+.vetch-currency-input {
+    position: relative;
+    input {
+        padding-left:32px;
+    }
+    &:before {
+        position: absolute;
+        top: 0;
+        content:"£";
+        left: 16px;
+        top:12px;
+        color:$vetch-secondary;
+        z-index: 1;
+        font-weight:600;
+        font-size:1rem;
+    }
+}
+input[type=text], input[type=number], input[type=email], textarea, select {
+    color: $vetch-secondary;
+    -webkit-appearance: none;
+    -webkit-box-shadow:inset 0px 0px 0px 1px $vetch-secondary;
+    -moz-box-shadow:inset 0px 0px 0px 1px $vetch-secondary;
+    box-shadow:inset 0px 0px 0px 1px $vetch-secondary;
+    border:none;
+    height:48px;
+    display:block;
+    margin:0;
+    &:focus {
+        -webkit-box-shadow:inset 0px 0px 0px 2px $vetch-secondary;
+        -moz-box-shadow:inset 0px 0px 0px 2px $vetch-secondary;
+        box-shadow:inset 0px 0px 0px 2px $vetch-secondary;
+        border:none;
+        box-shadow:inset 0 0 0 1px $vetch-secondary, 0 0 0 3px $vetch-primary;
+    }
+    &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+      color: $vetch-secondary;
+        opacity:.5;
+    }
+    &::-moz-placeholder { /* Firefox 19+ */
+      color: $vetch-secondary;
+        opacity:.5;
+    }
+    &:-ms-input-placeholder { /* IE 10+ */
+      color: $vetch-secondary;
+        opacity:.5;
+    }
+    &:-moz-placeholder { /* Firefox 18- */
+     color: $vetch-secondary;
+        opacity:.5;
+    }
+    &::-webkit-outer-spin-button, &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    -moz-appearance: textfield;
+}
+textarea {
+    min-height:180px;
+    resize: none;
+}
+.vetch-form-checkbox-label {
+    padding:0;
+    margin-left:0!important;
+    margin-right:0!important;
+    font-weight:400;
+    padding:0.5rem 1rem;
+    padding-left:calc(24px + 2rem);
+    border-radius:$global-radius;
+    position:relative;
+    &:before {
+        position:absolute;
+        display:block;
+        content: '';
+        width:24px;
+        height:24px;
+        border:$vetch-borders 1px solid;
+        top:10px;
+        left:1rem;
+        background:$white;
+    }
+    &:after {
+        position:absolute;
+        display:block;
+        content: '';
+        width:24px;
+        height:24px;
+        top:10px;
+        left:1rem;
+    }
+    &:hover {
+        background:$vetch-lightgrey;
+    }
+}
+.vetch-form-checkbox-input {
+    border:0;
+    clip:rect(1px,1px,1px,1px);
+    -webkit-clip-path:inset(50%);
+    clip-path:inset(50%);
+    height:1px;
+    overflow:hidden;
+    padding:0;
+    position:absolute;
+    white-space:nowrap;
+    width:1px;
+    margin:0!important;
+    &:checked {
+        ~ label {
+            &:before {
+                background:$vetch-success;
+                border:$vetch-success 1px solid;
+            }
+            &:after {
+                background: url('../images/checkbox-checked.svg');
+            }
+        }
+    }
+    &:focus ~ label {
+        background: $vetch-lightgrey;
+        box-shadow:inset 0 0 0 1px $vetch-secondary, 0 0 0 3px $vetch-primary;
+    }
+}
+.full-checkbox-input {
+    + .vetch-form-checkbox-label {
+        width:100%;
+    }
+}
+.vetch-form-group-container {
+    .vetch-form-group {
+        margin-bottom:1.5rem;
+        width:100%;
+        position:relative;
+        label {
+            margin-bottom: 0.5rem;
+        }
+        & > .vetch-form-checkbox-input + label {
+            margin-bottom:0;
+        }
+    }
+    .vetch-button-container {
+        margin-top:2rem;
+    }
+}
+select {
+    background-image:url('../images/select-arrow.svg');
+    background-size:24px 24px;
+    background-position:right -2rem center;
+    padding-right:2.5rem;
+}
+
+/* FORMS ERROR STATE */
+.error-message {
+    display:none;
+}
+.error {
+    input[type=text], .error input[type=number], .error textarea, .error select {
+        -webkit-box-shadow:inset 0px 0px 0px 2px $vetch-error;
+        -moz-box-shadow:inset 0px 0px 0px 2px $vetch-error;
+        box-shadow:inset 0px 0px 0px 2px $vetch-error;
+        margin-bottom:0.5rem;
+    }
+    .error-message {
+        display:block;
+        display:inline-block;
+        margin-bottom:0.5rem;
+        font-weight:700;
+        position:relative;
+        padding-left:1.8rem;
+        color:$vetch-error;
+        &:before {
+            display:block;
+            content: '';
+            background-image:url('../images/error.svg');
+            width:20px;
+            height:20px;
+            position:absolute;
+            left:0;
+            top:2px;
+        }
+    }
+}
+.card-logos {
+    margin-bottom:1.5rem;
+    img {
+        height:32px;
+        margin-right:0.2rem;
+    }
+}
+
+/* PAYMENTS */
+.StripeElement {
+    padding:1rem!important;
+    -webkit-box-shadow:inset 0px 0px 0px 1px $vetch-secondary;
+    -moz-box-shadow:inset 0px 0px 0px 1px $vetch-secondary;
+    box-shadow:inset 0px 0px 0px 1px $vetch-secondary;
+    cursor:text!important;
+    border-radius:$global-radius;
+    &.focused {
+        -webkit-box-shadow:inset 0px 0px 0px 2px $vetch-secondary;
+        -moz-box-shadow:inset 0px 0px 0px 2px $vetch-secondary;
+        box-shadow:inset 0px 0px 0px 2px $vetch-secondary;
+        border:none;
+        box-shadow:inset 0 0 0 1px $vetch-secondary, 0 0 0 3px $vetch-primary;
+        transition: box-shadow 0.5s, border-color 0.25s ease-in-out, -webkit-box-shadow 0.5s;
+    }
+    &.error {
+        -webkit-box-shadow:inset 0px 0px 0px 2px $vetch-error;
+        -moz-box-shadow:inset 0px 0px 0px 2px $vetch-error;
+        box-shadow:inset 0px 0px 0px 2px $vetch-error;
+        margin-bottom:1rem;
+        &.focused {
+            -webkit-box-shadow:inset 0px 0px 0px 2px $vetch-secondary;
+            -moz-box-shadow:inset 0px 0px 0px 2px $vetch-secondary;
+            box-shadow:inset 0px 0px 0px 2px $vetch-secondary;
+            border:none;
+            box-shadow:inset 0 0 0 1px $vetch-secondary, 0 0 0 3px $vetch-primary;
+            transition: box-shadow 0.5s, border-color 0.25s ease-in-out, -webkit-box-shadow 0.5s;
+        }
+    }
+}
+#card-cvc, #card-expiry, #card-postcode {
+    max-width:200px;
+}
+#card-cvc {
+    position:relative;
+    &:after {
+        display:block;
+        content: '';
+        background-image:url('../images/cvv.svg');
+        background-repeat: no-repeat;
+        background-position: center right 0.8rem;
+        background-size:24px;
+        height:50px;
+        width:100%;
+        position: absolute;
+        top:0;
+        left:0;
+    }
+}
+.form-error.is-visible {
+    display:inline-block;
+    margin-bottom:0.5rem;
+    margin-top:0.5rem;
+    font-weight:700;
+    position:relative;
+    padding-left:1.8rem;
+    color:$vetch-error;
+    font-size:1rem;
+    &:before {
+        display:block;
+        content: '';
+        background-image:url('../images/error.svg');
+        width:20px;
+        height:20px;
+        position:absolute;
+        left:0;
+        top:2px;
+    }
+}
+.is-invalid-input {
+   -webkit-box-shadow:inset 0px 0px 0px 2px $vetch-error!important;
+    -moz-box-shadow:inset 0px 0px 0px 2px $vetch-error!important;
+    box-shadow:inset 0px 0px 0px 2px $vetch-error!important;
+    margin-bottom:0.5rem!important; 
+}
+.contact-container {
+    margin-top:3rem;
+    h1 {
+        width:100%;
+        font-size:2.4rem;
+        font-weight:bold;
+    }
+    p {
+        width:100%;
+    }   
+}

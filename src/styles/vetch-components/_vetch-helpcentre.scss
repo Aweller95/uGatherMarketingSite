@@ -1,0 +1,84 @@
+@include breakpoint(small only) {
+    .help-centre {
+        .help-leadin {
+            margin-bottom:2rem;
+        }
+    }
+}
+
+.help {
+    h1 {
+        font-size:2.6rem;
+        font-weight:bold;
+    }
+    h2 {
+        font-size:2rem;
+        font-weight: bold;
+        padding:2rem 0 1rem 0;
+        @include breakpoint(small only) {
+            padding:0 0 1rem 0;
+        }
+    }
+    h3 {
+        font-size:1.6rem;
+        font-weight: bold;
+        margin-top:2rem;
+        margin-bottom:1rem;
+    }
+    .callout {
+        padding:1.5rem;
+        margin-bottom:2rem;
+        @include breakpoint(small only) {
+            margin-bottom:1rem;
+        }
+        ul {
+            list-style: none;
+            margin:0;
+            li {
+                padding-bottom:0.5rem;
+            }
+        }
+    }
+    .content-sidebar {
+        @include breakpoint(small only) {
+            padding-top:1rem;
+            margin-bottom:0;
+        }
+    }
+    @include breakpoint(small only) {
+        .content-menu {
+            display:none;
+        }
+    }
+    .content-section {
+        li {
+            margin-bottom:0.8rem;
+            ul, ol {
+                margin-top:0.8rem;
+            }
+        }
+    }
+    .button-group {
+        &.contact-button {
+            margin-top:2rem;
+            span {
+                padding-top:0.6rem;
+                padding-right: 0.5rem;
+                display:inline-block;
+            }
+            button {
+                min-width: auto;
+            }
+            @include breakpoint(small only) {
+                span {
+                    width:100%;
+                    text-align:center;
+                    margin-bottom:1rem;
+                }
+                button {
+                    width:100%;
+                }
+            }
+        }
+    }
+}

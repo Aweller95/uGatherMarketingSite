@@ -1,0 +1,199 @@
+.donationselect-container {
+    margin-top:2rem;
+    h1 {
+        width:100%;
+        font-size:2.4rem;
+        font-weight:bold;
+    }
+    p {
+        width:100%;
+    }
+    .donation-select{
+        margin-top:1.5rem;
+        h2 {
+            font-size:1.375rem;
+            font-weight:bold;
+            margin:0;
+        }
+    }
+    // DONATION VALUES (CIRCLES)
+    .donation-amount {
+        ul {
+            margin:1.5rem 0 0 0;
+            .donation-value {
+                list-style: none;
+                margin:0 0.5rem 0.5rem 0;
+                padding:0;
+                float:left;
+                width:60px;
+                height:60px;
+                label {
+                    display:block;
+                    width:60px;
+                    height:60px;
+                    -webkit-box-shadow:inset 0px 0px 0px 2px $vetch-secondary;
+                    -moz-box-shadow:inset 0px 0px 0px 2px $vetch-secondary;
+                    box-shadow:inset 0px 0px 0px 2px $vetch-secondary;
+                    border-radius: 100%;
+                    color:$vetch-secondary;
+                    letter-spacing:-0.5px;
+                    cursor:pointer;
+                    margin:0;
+                    padding:0;
+                    user-select: none; /* supported by Chrome and Opera */
+                    -webkit-user-select: none; /* Safari */
+                    -khtml-user-select: none; /* Konqueror HTML */
+                    -moz-user-select: none; /* Firefox */
+                    -ms-user-select: none; /* Internet Explorer/Edge */
+                    &:hover {
+                        background:$vetch-lightgrey;
+                    }
+                    div {
+                        font-size:1.125rem;
+                        font-weight:700;
+                        display:block;
+                        width:60px;
+                        height:60px;
+                        text-align: center;
+                        position:relative;
+                        line-height: 60px;
+                        span {
+                            font-size:0.75rem;
+                            font-weight:600;
+                        }
+                    }
+                }
+                input[type=radio] {
+                    border:0;
+                    clip:rect(1px,1px,1px,1px);
+                    -webkit-clip-path:inset(50%);
+                    clip-path:inset(50%);
+                    height:1px;
+                    overflow:hidden;
+                    padding:0;
+                    position:absolute;
+                    white-space:nowrap;
+                    width:1px;
+                    opacity:0;
+                    filter:alpha(opacity=0);
+                    margin:0!important;
+                    &:checked + label {
+                        background:$vetch-info;
+                        -webkit-box-shadow:inset 0px 0px 0px 2px $vetch-info;
+                        -moz-box-shadow:inset 0px 0px 0px 2px $vetch-info;
+                        box-shadow:inset 0px 0px 0px 2px $vetch-info;
+                        color:$white;
+                        .donation-value-more {
+                            background-image:url('../images/donation-value-more-selected.svg')!important;
+                        }
+                    }
+                    &:focus + label {
+                        background:$vetch-lightgrey;
+                        color:$vetch-secondary;
+                        box-shadow:inset 0 0 0 1px $vetch-secondary, 0 0 0 3px $vetch-primary;
+                    }
+                    &:checked {     
+                        &:focus + label {
+                            background:$vetch-info;
+                            color:$white;
+                            .donation-value-more {
+                                background-image:url('../images/donation-value-more-selected.svg')!important;
+                            }
+                        }
+                    }
+                }
+                
+                a {
+                    display:block;
+                    width:60px;
+                    height:60px;
+                    border:$vetch-secondary 2px solid;
+                    border-radius: 100%;
+                    color:$vetch-secondary;
+                    letter-spacing:-0.5px;
+                    div {
+                        font-size:1.125rem;
+                        font-weight:700;
+                        display:block;
+                        width:60px;
+                        height:60px;
+                        text-align: center;
+                        position:relative;
+                        top:-2px;
+                        left:-2px;
+                        line-height: 60px;
+                        span {
+                            font-size:0.75rem;
+                            font-weight:600;
+                        }
+                    }
+                    &:hover {
+                        background-color:$vetch-lightgrey;
+                        color:$white;
+                        .donation-value-more {
+                            background-image:url('../images/donation-value-more-deselected.svg');
+                        }
+                    }
+                    &:focus {
+                        box-shadow:inset 0 0 0 1px $vetch-secondary, 0 0 0 3px $vetch-primary;
+                        background:$vetch-lightgrey;
+                        .donation-value-more {
+                            background-image:url('../images/donation-value-more-selected.svg')!important;
+                        }
+                    }
+                }
+                &.selected-value {
+                    a {
+                        border:$vetch-info 2px solid;
+                        background-color:$vetch-info;
+                        color:$white;
+                        .donation-value-more {
+                            background-image:url('../images/donation-value-more-selected.svg');
+                        }
+                    }
+                }
+                .donation-value-more {
+                    background-image:url('../images/donation-value-more-deselected.svg');
+                    background-position: center center;
+                    background-repeat:no-repeat;
+                }
+            }
+        }
+    }
+    //ADDING DONATIONS TO A LOCATION
+    .donation-location {
+        .vetch-anchor-menu-container {
+            position:relative;
+            margin:0;
+            padding:0;
+        }
+    }
+    
+}
+.donate-panel-body {
+    background:$white;
+    padding-top:0!important;
+    padding-bottom:0!important;
+}
+
+//HIDE PAGE ELEMENTS WHEN DONATING
+
+.event-donate, .event-donate-message, .event-donate-summary, .event-donate-payment {
+    .vetch-button-container {
+        padding-bottom:2rem;
+    }
+    .top-bar-left .dropdown {
+        display:none;
+    }
+    .top-bar-right {
+        display:none;
+    }
+    .vetch-footer {
+        display:none;
+    }
+    .vetch-topbar-nav {
+        .menu-icon {
+            display:none;
+        }
+    }
+}

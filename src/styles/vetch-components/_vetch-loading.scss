@@ -1,0 +1,45 @@
+/* STANDARD LOADER ELEMENTS */
+.loading {
+    overflow: hidden;
+    &:before {
+        display:block;
+        position:fixed;
+        content: '';
+        height:100%;
+        width:100%;
+        background-color:rgba(0,0,0,0.8);
+        top:0;
+        left:0;
+        z-index:10000;
+        background-image:url('../images/loader.svg');
+        background-repeat: no-repeat;
+        background-position:center center;
+        background-size:50px 50px;
+    }   
+}
+
+/* LOADER FOR PLACING DONATIONS */
+.event-donate-payment {
+    &.loading {
+        &:after {
+            display:block;
+            position:fixed;
+            top:43%;
+            left:calc(50% - 80px);
+            content: 'Placing your donation...';
+            color:#FFF;
+            z-index:100000;
+
+        }
+    }
+}
+
+/* LOADER FOR MODALS */
+.reveal {
+  .loading {
+        &:before {
+            background-color:rgba(255,255,255,0.8);
+            background-image:url('../images/loader-blue.svg');
+        }
+    }
+}

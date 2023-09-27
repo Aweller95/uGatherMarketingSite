@@ -1,0 +1,281 @@
+html.is-reveal-open {
+    overflow-y:visible!important;
+    &.zf-has-scroll {
+        overflow-y: visible!important;
+    }
+}
+.reveal {
+    position:fixed;
+    top:50%!important; /* override inline style injected from JS */
+    left:50%;
+    transform:translate(-50%, -50%);
+    border:0;
+    outline:none;
+}
+.reveal-overlay{
+    background-color:rgba(10, 10, 10, 0.80);
+    @include breakpoint(small only) {
+        background-color:rgba(255, 255, 255, 1);
+    }
+}
+.vetch-modal-close-button {
+    height:3rem;
+    position:relative;
+    top:-1rem;
+    .close-button {
+        width:48px;
+        height:48px;
+        top:0px;
+        right:0px;
+        &:before {
+            display:block;
+            position:absolute;
+            top:12px;
+            left:12px;
+            content: '';
+            background-image:url('../images/close.svg');
+            background-repeat: no-repeat;
+            background-position:center center;
+            width:24px;
+            height:24px;
+        }
+    }
+}
+
+.vetch-signup-modal {
+    padding:2rem;
+    h1 {
+        font-weight: bold;
+        font-size:2.2rem;
+    }
+    .button-group {
+        margin-top:1rem;
+        margin-bottom:0;
+    }
+    .grid-container {
+        margin-top:-1rem;
+    }
+}
+
+.vetch-info-modal {
+    padding:2rem;
+    @include breakpoint(small only) {
+        padding:1rem;
+    }
+    @include breakpoint(medium) {
+        width:80%;
+    }
+    @include breakpoint(large) {
+        width:880px;
+    }
+    h1.header {
+        text-align: center;
+        font-weight: bold;
+        font-size:2.2rem;
+    }
+    p.sub-header {
+        text-align:center;
+        width:80%;
+        margin:auto;
+    }
+    .vetch-messages {
+        margin-bottom:1rem;
+    }
+    .vetch-info-steps {
+        list-style:none;
+        margin:0;
+        padding:2rem 0 1rem 3rem;
+        width:85%;
+        margin:auto;
+        li {
+            position:relative;
+            display:inline-block;
+            padding-bottom:1rem;
+            &:before {
+                content: '';
+                display:block;
+                width:3px;
+                height:100%;
+                background:$vetch-borders;
+                position:absolute;
+                left:-24px;
+            }
+            &:first-child {
+                &:before {
+                    height:50%;
+                    top:50%;
+                }
+            }
+            &:last-child {
+                &:before {
+                    display:none;
+                }
+            }
+            .vetch-info-steps-message {
+                display:block;
+                width:48px;
+                height:48px;
+                background:$vetch-success;
+                border-radius: 100%;
+                position:absolute;
+                left:-48px;
+                top:0px;
+                /*-webkit-box-shadow:inset 0px 0px 0px 4px $white;
+                -moz-box-shadow:inset 0px 0px 0px 4px $white;
+                box-shadow:inset 0px 0px 0px 4px $white;*/
+                border:$white 4px solid;
+                small {
+                    color:$white;
+                    font-size:1rem;
+                    display:block;
+                    width:100%;
+                    height:100%;
+                    text-align: center;
+                    line-height: 2.5rem;
+                    font-weight:bold;
+                }
+            }
+            h2 {
+                font-size:1.2rem;
+                font-weight:bold;
+                margin:0 0 0 1rem;
+            }
+            p {
+                text-align:left;
+                margin:0 0 0 1rem;
+            }
+        }
+    }
+    .callout {
+        margin-bottom:1rem;
+        label {
+            font-size:1.2rem;
+            font-weight:bold;
+            margin:0;
+        }
+    }
+    .vetch-form-group {
+        .button {
+            width:100%;
+            min-width:auto;
+        }
+        @include breakpoint(medium) {
+            .form-input {
+                padding-right:0.5rem;
+            }
+        }
+        @include breakpoint(small only) {
+            .form-input {
+                padding-bottom:0.5rem;
+            }
+        }
+    }
+    .vetch-links-container {
+        padding:1.2rem 0 0 0;
+        a {
+            text-decoration:none;
+            width:150px;
+            height:50px;
+            outline:none;
+            display:inline-block;
+            border-radius:$global-radius;
+            margin-right:1rem;
+        }
+        .vetch-qr-code {
+            height:56px;
+        }
+    }
+}
+
+.tabs-container {
+        .tabs {
+            border:0;
+            padding:0;
+            li {
+                width:50%;
+                padding-left:0.2rem;
+                padding-right:0.2rem;
+                a {
+                    background: $vetch-lightgrey;
+                    color:$vetch-secondary;
+                    border-radius:24px;
+                    display:block;
+                    width:100%;
+                    text-align: center;
+                    text-decoration: none;
+                    font-size:1rem;
+                    padding:0.7rem 1rem;
+                    &:hover {
+                        background: darken($vetch-lightgrey, 6);
+                        color: $vetch-secondary;
+                    }
+                    &:focus {
+                        outline:none;
+                        background: darken($vetch-lightgrey, 6);
+                        color: $vetch-secondary;
+                        box-shadow:inset 0 0 0 1px $vetch-secondary, 0 0 0 3px $vetch-primary;
+                    }
+                }
+                &.is-active > a {
+                    background: $vetch-secondary;
+                    color:$white;
+                    &:hover {
+                        background: $vetch-secondary;
+                        color: $white;
+                    }
+                    &:focus {
+                        outline:none;
+                        background: $vetch-secondary;
+                        color: $white;
+                        box-shadow:inset 0 0 0 1px $vetch-secondary, 0 0 0 3px $vetch-primary;
+                    }
+                }
+            }
+        }
+    }
+    .tabs-content {
+        border:0;
+        color:$vetch-secondary;
+        @include breakpoint(large) {
+            .content-outer {
+                padding-left:24px;
+            }
+        }
+        .content-title {
+            font-size:1.375rem;
+            font-weight:bold;
+        }
+        .tabs-panel {
+            padding:2rem 0 0 0;
+            .sub-header {
+                text-align: center;
+            }
+            .tabs-content-details {
+                padding:1.5rem 0 0 0;
+                @include breakpoint(small only) {
+                    padding:0;
+                }
+                .content-list {
+                    padding-bottom:1rem;
+                    padding-left:1rem;
+                    list-style: none;
+                    li {
+                        position:relative;
+                        padding:0.5rem 4rem 0 0.2rem;
+                        &:before {
+                            display:block;
+                            position:absolute;
+                            left:-25px;
+                            top:12px;
+                            content: '';
+                            background-image:url('../images/list-tick.svg');
+                            background-repeat: no-repeat;
+                            background-position: center center;
+                            width:17px;
+                            height:14px;
+                        }
+                    }
+                }
+            }
+        }
+    }

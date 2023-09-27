@@ -1,136 +1,59 @@
 import * as React from "react"
-
-const pageStyles = {
-  color: "#232129",
-  padding: 96,
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
-const headingAccentStyles = {
-  color: "#663399",
-}
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
-const listStyles = {
-  marginBottom: 96,
-  paddingLeft: 0,
-}
-const listItemStyles = {
-  fontWeight: 300,
-  fontSize: 24,
-  maxWidth: 560,
-  marginBottom: 30,
-}
-
-const linkStyle = {
-  color: "#8954A8",
-  fontWeight: "bold",
-  fontSize: 16,
-  verticalAlign: "5%",
-}
-
-const docLinkStyle = {
-  ...linkStyle,
-  listStyleType: "none",
-  marginBottom: 24,
-}
-
-const descriptionStyle = {
-  color: "#232129",
-  fontSize: 14,
-  marginTop: 10,
-  marginBottom: 0,
-  lineHeight: 1.25,
-}
-
-const docLink = {
-  text: "Documentation",
-  url: "https://www.gatsbyjs.com/docs/",
-  color: "#8954A8",
-}
-
-const badgeStyle = {
-  color: "#fff",
-  backgroundColor: "#088413",
-  border: "1px solid #088413",
-  fontSize: 11,
-  fontWeight: "bold",
-  letterSpacing: 1,
-  borderRadius: 4,
-  padding: "4px 6px",
-  display: "inline-block",
-  position: "relative",
-  top: -2,
-  marginLeft: 10,
-  lineHeight: 1,
-}
-
-const links = [
-  {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial/getting-started/",
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-    color: "#E95800",
-  },
-  {
-    text: "How to Guides",
-    url: "https://www.gatsbyjs.com/docs/how-to/",
-    description:
-      "Practical step-by-step guides to help you achieve a specific goal. Most useful when you're trying to get something done.",
-    color: "#1099A8",
-  },
-  {
-    text: "Reference Guides",
-    url: "https://www.gatsbyjs.com/docs/reference/",
-    description:
-      "Nitty-gritty technical descriptions of how Gatsby works. Most useful when you need detailed information about Gatsby's APIs.",
-    color: "#BC027F",
-  },
-  {
-    text: "Conceptual Guides",
-    url: "https://www.gatsbyjs.com/docs/conceptual/",
-    description:
-      "Big-picture explanations of higher-level Gatsby concepts. Most useful for building understanding of a particular topic.",
-    color: "#0D96F2",
-  },
-  {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-    description:
-      "Add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
-    color: "#8EB814",
-  },
-  {
-    text: "Build and Host",
-    url: "https://www.gatsbyjs.com/cloud",
-    badge: true,
-    description:
-      "Now you’re ready to show the world! Give your Gatsby site superpowers: Build and host on Gatsby Cloud. Get started for free!",
-    color: "#663399",
-  },
-]
+import "../styles/main.scss"
 
 const IndexPage = () => {
   return (
-    <main style={pageStyles}>
-      <h1 style={headingStyles}>
-        Welcome to uGather
-        <br />
-        <span style={headingAccentStyles}>— ready - set - collect!</span>
-      </h1>
+    <main>
+
+      <nav class="no-js">
+          <div class="vetch-topbar-nav">
+          <div class="title-bar vetch-topbar" data-responsive-toggle="vetch-menu" data-hide-for="medium">
+              <button class="menu-icon" type="button" data-toggle="vetch-menu"></button>
+              <a href="/" border="0"><div class="vetch-logo"><img src="{% static 'dist/images/vetch-logo.svg' %}" width="114" height="24" alt="Vetch logo"/></div></a>
+          </div>
+          <div class="grid-container full">
+              <div class="grid-x grid-padding-x">
+                  <div class="large-12 cell">
+                      <div class="grid-container">
+                          <div class="grid-x grid-padding-x">
+                              <div class="large-12 medium-12 small-12">
+                                  <div class="top-bar vetch-topbar" id="vetch-menu">
+                                      <div class="top-bar-left">
+                                          <a href="/" border="0" class="logo-link"><div class="vetch-logo"><img src="{% static 'dist/images/vetch-logo.svg' %}" height="24" alt="Vetch logo"/></div></a>
+                                          <ul class="vertical medium-horizontal menu" data-responsive-menu="accordion medium-dropdown">
+                                              <li class="home"><a href="/" tabindex="0">Features</a></li>
+                                              <li class="charities"><a href="/charities" tabindex="0">Charities</a></li>
+                                              <li class="events"><a href="/events" tabindex="0">Events</a></li>
+                                              <li class="help"><a href="/help-centre" tabindex="0">Help centre</a></li>
+                                          </ul>
+                                      </div>
+                                      <div class="top-bar-right">
+                                          <button href="#" class="button vetch-live-button" data-open="vetch-info-modal">Get Vetch app</button>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      </nav>
+
+      <div class="grid-container flex-align fluid vetch-footer vetch-footer-appblurb">
+          <div class="grid-x grid-padding-x">
+              <div class="large-12 cell">
+                  <span class="vetch-appicon"></span>
+                  <h3><strong>Run in the real world, collect charity donations.</strong></h3>
+                  <p>Download, join us and create your virtual fundraising event for free. Available on iOS.</p>
+                  <div class="large-12 cell download-vetch align-center-middle text-center">
+                      <a href="https://apps.apple.com/us/app/vetch/id1529874945" target="_blank" class="download-vetch-button appstore" title="Download Vetch for free on app store"></a>
+                      <img src="{% static 'dist/images/qr-code.svg' %}" class="vetch-qr-code" alt="Vetch QR code" />
+                  </div>
+              </div>
+          </div>
+      </div>
+
     </main>
   )
 }

@@ -1,0 +1,56 @@
+.phone-carousel-container {
+    position:relative;
+    margin-bottom:2rem;
+    @include breakpoint(small only) {
+        margin-top:2rem;
+    }
+    height:416px;
+    .phone-frame {
+        z-index:2;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, 0px);
+        width:200px;
+        height:416px;
+        margin:auto;
+        background-image:url('../images/phone-outline.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .orbit {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, 6px);
+        z-index:1;
+        .orbit-wrapper {
+            padding:0;
+            .orbit-container {
+                padding:0;
+                height:440px!important;
+                .orbit-slide {
+                    padding:0;
+                    &:before {
+                        display:none;
+                    }
+                }
+            }
+        }
+         &:is(div, ul, li, img) {
+            width:186px;
+             height:400px;
+        }
+    }
+    .circle {
+        width:286px;
+        height:286px;
+        background-color:$vetch-primary;
+        border-radius:100%;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, 68px);
+        z-index:0;
+    }
+}

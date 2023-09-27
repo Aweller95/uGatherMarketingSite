@@ -1,0 +1,56 @@
+.feature-banner {
+    padding:0;
+    @include breakpoint(small only) {
+        padding:0;
+    }
+    @include breakpoint(small only) {
+        &.bottom-aligned-image {
+            .feature-text {
+                p {
+                    padding-top:1.5rem;
+                }
+            }  
+        }
+    }
+    .feature-image {
+        background-repeat:no-repeat;
+        background-position: center center;
+        background-size:contain;
+        @include breakpoint(small only) {
+            padding-top:75%;
+            margin-top:0;
+        }
+    }
+    .feature-text {
+        padding:7.5rem 0; 
+        @include breakpoint(small only) {
+            padding:2.5rem 0;
+            text-align: center;
+        }
+        h3, p {
+            text-align: left;
+            @include breakpoint(small only) {
+                text-align: center;
+            }
+        }
+        h3 {
+            line-height:3rem;
+            padding-bottom:1rem;
+            @include breakpoint(small only) {
+                padding-bottom:0;
+            }
+        }
+        p {
+            margin-bottom:2rem;
+            @include breakpoint(small only) {
+                padding:0 1rem;
+            }
+        }
+        .banner-icon {
+            margin-bottom:0.5rem;   
+        }
+    }
+    .button-group {
+        margin:0;
+    }
+}

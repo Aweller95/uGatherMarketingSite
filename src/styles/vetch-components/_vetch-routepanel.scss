@@ -1,0 +1,485 @@
+.route-panel-body {
+    background: $vetch-lightgrey;
+    padding:2rem 0 2rem 0;
+    text-align: center;
+    margin-bottom:2rem;
+    h3 {
+        text-align: center;
+        font-size:1.75rem;
+    }
+    h4 {
+        text-align: center;
+        font-size:1.2rem;
+    }
+    .route-panel-container {
+        padding:1rem 0 1rem 0;
+        margin:0 0 1rem 0;
+        overflow-x: scroll;
+        .route-panel-moneystone-holder {
+            list-style:none;
+            display:flex;
+            flex-wrap: nowrap;
+            margin-left:0;
+            margin-bottom:0;
+            @include breakpoint(medium) {
+                margin:auto;
+            }
+            li {
+                position:relative;
+                margin:0!important;
+                border-radius:$global-radius;
+                text-align: center;
+                //flex-grow: 1;
+                flex: 1 1 0px;
+                &.disabled, &.collected {
+                    .route-panel-moneystone-container {
+                        -webkit-box-shadow:none!important;
+                        -moz-box-shadow:none!important;
+                        box-shadow:none!important; 
+                        &:hover {
+                            -webkit-box-shadow:none!important;
+                            -moz-box-shadow:none!important;
+                            box-shadow:none!important;
+                        }
+                        .moneystone-distance {
+                            color:$vetch-secondary;
+                        }
+                        a {
+                            cursor:default!important;
+                        }
+                    }
+                }
+                &.collected {
+                    .route-panel-moneystone-container {
+                        .moneystone-icon {
+                            background-image:url('../images/moneystone-collected.svg');
+                        }
+                        &:before {
+                            content: "";
+                            display:block;
+                            background:$vetch-success!important;
+                            width:100%;
+                            height:3px;
+                            position:absolute;
+                            top:52px;
+                            left:-50%;
+                            z-index:1;
+                        }
+                    }
+                }
+                &.donated {
+                    .route-panel-moneystone-container {
+                        .moneystone-icon {
+                            background-image:url('../images/moneystone-donated.svg');
+                        }
+                        .moneystone-donation {
+                            visibility:visible;
+                        }
+                    }
+                }
+                .route-panel-moneystone-container {
+                    margin-left:0.25rem;
+                    margin-right:0.25rem;
+                    background:$white;
+                    -webkit-box-shadow:inset 0px 0px 0px 1px $vetch-secondary;
+                    -moz-box-shadow:inset 0px 0px 0px 1px $vetch-secondary;
+                    box-shadow:inset 0px 0px 0px 1px $vetch-secondary;
+                    border-radius:$global-radius;
+                    &:hover {
+                      -webkit-box-shadow:inset 0px 0px 0px 2px $vetch-secondary;
+                        -moz-box-shadow:inset 0px 0px 0px 2px $vetch-secondary;
+                        box-shadow:inset 0px 0px 0px 2px $vetch-secondary;  
+                    }
+                    a {
+                        display:inline-block;
+                        width:100%;
+                        text-decoration: none;
+                        padding-top:1.25rem;
+                        padding-bottom:0.5rem;
+                        padding-left:0.5rem;
+                        padding-right:0.5rem;
+                    }
+                    span {
+                        display:block;
+                        text-align: center;
+                        width: 100%;
+                        position: relative;
+                        white-space:nowrap;
+                    }
+                    .moneystone-icon {
+                        background-image:url('../images/moneystone-yellow.svg');
+                        background-repeat:no-repeat;
+                        background-position: center center;
+                        display:inline-block;
+                        width:68px;
+                        height:68px;
+                        text-align: center;
+                        position:relative;
+                        z-index: 2;
+                        small {
+                            display:block;
+                            position:absolute;
+                            top:-4px;
+                            left:-4px;
+                            width:32px;
+                            height:32px;
+                            background-image:url('../images/moneystone-number.svg');
+                            background-repeat: no-repeat;
+                            background-position: center center;
+                            span {
+                                display:block;
+                                position:relative;
+                                width:32px;
+                                height:32px;
+                                color:$white;
+                                font-size:0.875rem;
+                                font-weight:700;
+                                line-height:2rem;
+                            }
+                        }
+                        .event-day {
+                            font-size:1.25rem;
+                            color:$vetch-secondary;
+                            font-weight: bold;
+                            position:absolute;
+                            top:12px;
+                        }
+                        .event-month {
+                            font-size:0.8rem;
+                            color:$vetch-error;
+                            font-weight: bold;
+                            position:absolute;
+                            top:34px;
+                            text-transform:uppercase;
+                        }
+                    }
+                    .moneystone-distance {
+                        font-weight: 400;
+                        top:-8px;
+                        font-size:0.9rem;
+                    }
+                    .moneystone-amount {
+                        color:$vetch-secondary;
+                        font-weight:bold;
+                        display:inline-block;
+                        top:-8px;
+                    }
+                    .moneystone-donation {
+                        visibility:hidden;
+                        color:$vetch-info;
+                        font-weight:bold;
+                        small {
+                            display:inline-block;
+                        }
+                        top:-4px;
+                    }
+                }
+                &:before {
+                    content: "";
+                    display:block;
+                    background:$vetch-borders;
+                    width:100%;
+                    height:3px;
+                    position:absolute;
+                    top:52px;
+                    left:0px;
+                    z-index:1;
+                }
+                &:first-child {
+                    margin-right:0.25rem;
+                    .route-panel-moneystone-container { 
+                        padding-top:1.25rem;
+                        padding-bottom:0.5rem;
+                        -webkit-box-shadow:inset 0px 0px 0px 1px $white;
+                        -moz-box-shadow:inset 0px 0px 0px 1px $white;
+                        box-shadow:inset 0px 0px 0px 1px $white;
+                        margin-left:0;
+                        padding-left:0.5rem;
+                        padding-right:0.5rem;
+                        .moneystone-icon {
+                            background-image:url('../images/moneystone-blank.svg');
+                        }
+                        .moneystone-icon > small {
+                            background-image:url('../images/marker-start.svg');
+                            span {
+                                display: none;
+                            }
+                        }
+                    }
+                    &:before {
+                        width: 50%;
+                        right:0px;
+                        left:auto;
+                    }
+                }
+                &:last-child {
+                    &:before {
+                        width: 50%;
+                    }
+                    &:after {
+                        display:none;
+                    }
+                    .route-panel-moneystone-container {
+                        margin-right:0;
+                    }
+                    .moneystone-icon > small {
+                    background-image:url('../images/marker-finish.svg');
+                        span {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* DONATE ROUTE PANEL */
+.donate-panel-body {
+    margin-bottom:1rem;
+    .donate-panel-container {
+        .donate-panel-moneystone-holder {
+            list-style:none;
+            display:flex;
+            flex-wrap: nowrap;
+            margin-left:0;
+            position: relative;
+            overflow-y: scroll;
+            white-space: nowrap;
+            padding:0.2rem 0 1rem 0;
+            @include breakpoint(medium) {
+                margin:auto;
+            }
+            li {
+                position:relative;
+                margin:0!important;
+                min-width:97px;
+                border-radius:$global-radius;
+                text-align: center;
+                //flex-grow: 1;
+                flex: 1 1 0px;
+                &:before {
+                    content: "";
+                    display:block;
+                    background:$vetch-borders;
+                    width:100%;
+                    height:3px;
+                    position:absolute;
+                    top:52px;
+                    left:0px;
+                    z-index:1;
+                }
+                &:first-child {
+                    &:before {
+                        width: 50%;
+                        right:0px;
+                        left:auto;
+                    }
+                    .route-panel-moneystone-container {
+                        -webkit-box-shadow:inset 0px 0px 0px 1px $white;
+                        -moz-box-shadow:inset 0px 0px 0px 1px $white;
+                        box-shadow:inset 0px 0px 0px 1px $white;
+                        margin-left:0;
+                    }
+                }
+                &:last-child {
+                    &:before {
+                        width: 50%;
+                    }
+                    .route-panel-moneystone-container {
+                        margin-right:0!important;
+                    }
+                    label  {
+                        .moneystone-icon > small {
+                        background-image:url('../images/marker-finish.svg');
+                            span {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+                input[type=checkbox]{
+                    border:0;
+                    clip:rect(1px,1px,1px,1px);
+                    -webkit-clip-path:inset(50%);
+                    clip-path:inset(50%);
+                    height:1px;
+                    overflow:hidden;
+                    padding:0;
+                    position:absolute;
+                    white-space:nowrap;
+                    width:1px;
+                    &:checked + label {
+                        background:$vetch-lightgrey;
+                        -webkit-box-shadow:inset 0px 0px 0px 2px $vetch-secondary;
+                        -moz-box-shadow:inset 0px 0px 0px 2px $vetch-secondary;
+                        box-shadow:inset 0px 0px 0px 2px $vetch-secondary;
+                    }
+                    &:checked + label .moneystone-icon {
+                      background-image:url('../images/moneystone-add-blank-selected.svg');
+                    }
+                    &:checked + label .moneystone-donation {
+                        visibility:visible;
+                    }
+                    &:focus ~ label {
+                        background: $vetch-lightgrey;
+                        box-shadow:inset 0 0 0 1px $vetch-secondary, 0 0 0 3px $vetch-primary;
+                    }
+                }
+                label {
+                    user-select: none; /* supported by Chrome and Opera */
+                    -webkit-user-select: none; /* Safari */
+                    -khtml-user-select: none; /* Konqueror HTML */
+                    -moz-user-select: none; /* Firefox */
+                    -ms-user-select: none; /* Internet Explorer/Edge */
+                    display:block;
+                    margin-left:0.25rem;
+                    margin-right:0.25rem;
+                    padding-top:1.25rem;
+                    padding-bottom:0.5rem;
+                    background:$white;
+                    -webkit-box-shadow:inset 0px 0px 0px 1px $vetch-borders;
+                    -moz-box-shadow:inset 0px 0px 0px 1px $vetch-borders;
+                    box-shadow:inset 0px 0px 0px 1px $vetch-borders;
+                    border-radius: $global-radius;
+                    &:hover {
+                        background:$vetch-lightgrey;
+                    }
+                    span {
+                        display:block;
+                        text-align: center;
+                        width: 100%;
+                        position: relative;
+                    }
+                    .moneystone-icon {
+                        background-image:url('../images/moneystone-add-blank.svg');
+                        background-repeat:no-repeat;
+                        background-position: center center;
+                        display:inline-block;
+                        width:68px;
+                        height:68px;
+                        text-align: center;
+                        position:relative;
+                        z-index: 2;
+                        small {
+                            display:block;
+                            position:absolute;
+                            top:-4px;
+                            left:-4px;
+                            width:32px;
+                            height:32px;
+                            background-image:url('../images/moneystone-number.svg');
+                            background-repeat: no-repeat;
+                            background-position: center center;
+                            span {
+                                display:block;
+                                position:relative;
+                                width:32px;
+                                height:32px;
+                                color:$white;
+                                font-size:0.875rem;
+                                font-weight:700;
+                                line-height:2rem;
+                            }
+                        }
+                    }
+                    .moneystone-distance {
+                        font-weight: 400;
+                        top:-8px;
+                        font-size:0.9rem;
+                    }
+                    .moneystone-donation {
+                        visibility:hidden;
+                        color:$vetch-info;
+                        small {
+                            display:inline-block;
+                        }
+                        top:-8px;
+                        .value {
+                            display:inline;
+                        }
+                    }
+                }
+                .route-panel-moneystone-container {
+                    margin-left:0.25rem;
+                    margin-right:0.25rem;
+                    background:$white;
+                    -webkit-box-shadow:inset 0px 0px 0px 1px $vetch-secondary;
+                    -moz-box-shadow:inset 0px 0px 0px 1px $vetch-secondary;
+                    box-shadow:inset 0px 0px 0px 1px $vetch-secondary;
+                    .route-panel-moneystone {
+                        position:relative;
+                        padding-top:1rem;
+                        .route-date {
+                            width:100%;
+                            position: absolute;
+                            top:42px;
+                            z-index: 2;
+                            .day {
+                                font-size:1.25rem;
+                                font-weight: 600;
+                            }
+                            .month {
+                                color:$vetch-error;
+                                text-transform: uppercase;
+                                font-size:0.75rem;
+                                font-weight: 600;
+                            }
+                            span {
+                                display:block;
+                                line-height: 1rem;
+                            }
+                        }
+                        img {
+                            z-index:1;
+                            position:relative;
+                            object-fit:none;
+                        }
+                        &.standalone-moneystone {
+                            img {
+                                top:2px;
+                                left:0px;
+                            }
+                        }
+                    }
+                }
+                .route-panel-details {
+                    height: 80px;
+                }
+            }
+            a {
+                display:block;
+                color: $vetch-secondary;
+                &:hover {
+                    .route-panel-moneystone-container {
+                        -webkit-box-shadow:inset 0px 0px 0px 2px $vetch-secondary;
+                        -moz-box-shadow:inset 0px 0px 0px 2px $vetch-secondary;
+                        box-shadow:inset 0px 0px 0px 2px $vetch-secondary;
+                    }
+                }
+            }
+            p {
+                padding-bottom:0;
+                margin-bottom:0;
+                &.moneystone-full-value, &.moneystone-donation-value {
+                    font-weight:bold;
+                    span {
+                        font-size:0.75rem;
+                        font-weight:500;
+                    }
+                }
+                &.moneystone-donation-value {
+                    color:$vetch-info;
+                    font-size:1rem;
+                    margin-top:-4px;
+                }
+            }
+        }
+    }
+    .route-panel-buttons {
+        a {
+            margin-bottom:0.5rem;
+            margin-right:0.5rem;
+        }
+    }
+}

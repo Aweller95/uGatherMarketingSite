@@ -1,0 +1,16 @@
+.hide-content {
+    padding-top:0!important;
+    nav, .vetch-footer, .vetch-progress, .fundraiser-callout, .cc_dialog {
+        display:none!important;
+        visibility:hidden!important;
+    }
+    .sticky-message {
+        padding-top:0!important;
+    }
+    &.event-donate-payment {
+        .back {
+            display:none!important;
+            visibility:hidden!important;
+        }
+    }
+}

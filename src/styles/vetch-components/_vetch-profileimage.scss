@@ -1,0 +1,14 @@
+.profile-image {
+    width:72px;
+    height:72px;
+    border-radius: 100%;
+    background: $vetch-borders;
+    margin-right: 1em;
+    overflow:hidden;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+    -webkit-box-shadow:0px 0px 0px 2px $white;
+    -moz-box-shadow:0px 0px 0px 2px $white;
+    box-shadow:0px 0px 0px 2px $white;
+}

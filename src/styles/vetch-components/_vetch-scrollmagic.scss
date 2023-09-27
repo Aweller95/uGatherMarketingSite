@@ -1,0 +1,300 @@
+/* ANIMATIONS */
+/* GPS PING */
+@-webkit-keyframes ping {
+  0% {
+    -webkit-transform: scale(0.2);
+            transform: scale(0.2);
+    opacity: 0.8;
+  }
+  80% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(2.2);
+            transform: scale(2.2);
+    opacity: 0;
+  }
+}
+@keyframes ping {
+  0% {
+    -webkit-transform: scale(0.2);
+            transform: scale(0.2);
+    opacity: 0.8;
+  }
+  80% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(2.2);
+            transform: scale(2.2);
+    opacity: 0;
+  }
+}
+/* ROUTE ITEMS */
+@-webkit-keyframes bounce-in-top {
+  0% {
+    -webkit-transform: translateY(-500px);
+            transform: translateY(-500px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+    opacity: 0;
+  }
+  38% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+    opacity: 1;
+  }
+  55% {
+    -webkit-transform: translateY(-65px);
+            transform: translateY(-65px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  72% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  81% {
+    -webkit-transform: translateY(-28px);
+            transform: translateY(-28px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  90% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  95% {
+    -webkit-transform: translateY(-8px);
+            transform: translateY(-8px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+}
+@keyframes bounce-in-top {
+  0% {
+    -webkit-transform: translateY(-500px);
+            transform: translateY(-500px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+    opacity: 0;
+  }
+  38% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+    opacity: 1;
+  }
+  55% {
+    -webkit-transform: translateY(-65px);
+            transform: translateY(-65px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  72% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  81% {
+    -webkit-transform: translateY(-28px);
+            transform: translateY(-28px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  90% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  95% {
+    -webkit-transform: translateY(-8px);
+            transform: translateY(-8px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+}
+/* ROUTE LABELS */
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* BLINK */
+@-webkit-keyframes blink-1 {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+@keyframes blink-1 {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+
+
+
+/* ROUTE CONTAINER */
+.vetch-route-container {
+    width:100%;
+}
+.vetch-route, .vetch-route-items, .vetch-route-labels {
+    width: 100%;
+}
+.vetch-route-container {
+    position:absolute;
+    top:0;
+    left:0;
+    padding:inherit;
+    background-repeat: no-repeat;
+    @include breakpoint(small only) {
+        display:none;
+    }
+    .vetch-route {
+        position:relative;
+        top:0px;
+        left:0px;
+        z-index:1;
+    }
+    .vetch-route-items {
+        position: absolute;
+        top:0px;
+        left:0px;
+        z-index: 2;
+    }
+    .vetch-route-labels {
+        position: absolute;
+        top:0;
+        left:0;
+        z-index:3;
+    }
+}
+.vetch-gps-location {
+    width:120px;
+    height:120px;
+    position:absolute;
+    right:0px;
+    bottom:30px;
+    opacity:0;
+    .vetch-gps-pulse {
+        width:120px;
+        height:120px;
+        border-radius:100%;
+        background-color:rgba($vetch-info, 0.5);
+        -webkit-animation: ping 2s ease-in-out infinite both;
+        animation: ping 2s ease-in-out infinite both;
+    }
+    .vetch-gps-dot {
+        width:30px;
+        height:30px;
+        border-radius:100%;
+        background-color:$vetch-primary;
+        background-image:url('../images/main-persona.jpg');
+        background-size:170%;
+        background-position: -11px 2px;
+        background-repeat: no-repeat;
+        position:absolute;
+        top:50%!important;
+        left:50%;
+        transform:translate(-50%, -50%);
+        -webkit-box-shadow:inset 0px 0px 0px 3px $white;
+        -moz-box-shadow:inset 0px 0px 0px 3px $white;
+        box-shadow:inset 0px 0px 0px 3px $white;
+    }
+}
+.vetch-gps-location.visible {
+ opacity:1;
+}
+.vetch-route-label-container {
+    position: absolute;
+    top:0px;
+    left:0px;
+    z-index: 2;
+    padding-left:0.9375rem;
+    padding-right:0.9375rem;
+    height:100%;
+    img {
+        position:absolute;
+        top:0;
+        left:0;
+        z-index: 2;
+        padding-left:0.9375rem;
+        padding-right:0.9375rem;
+        height:100%;
+    }
+}
+.vetch-route-label {
+    -webkit-animation: none;
+    animation: none;
+    opacity:0;
+}
+.vetch-route-label.visible {
+    -webkit-animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    opacity:1;
+}
+
+
+.item, .route-draw {
+    -webkit-animation: none;
+    animation: none;
+    opacity:0;
+}
+.item.visible {
+	-webkit-animation: bounce-in-top 0.5s both;
+	        animation: bounce-in-top 0.5s both;
+    opacity:1;
+}
+.route-draw.visible{
+  -webkit-animation: blink-1 0.6s both;
+	        animation: blink-1 0.6s both;
+opacity:1;
+}

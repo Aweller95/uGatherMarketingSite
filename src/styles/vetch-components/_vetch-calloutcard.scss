@@ -1,0 +1,259 @@
+.callout {
+    margin-bottom:0.5rem;
+    border:none;
+    border-radius: $global-radius;
+    &.large {
+        margin-bottom:0;
+    }
+    .button {
+        margin-bottom:0.5rem;
+        //width: 100%;
+        &:last-child {
+            margin-bottom:0;
+        }
+    }
+    &.primary {
+        background:$vetch-lightgrey;
+        color: $vetch-secondary;
+    }
+    &.secondary {
+        background:$white;
+        color: $vetch-secondary;
+    }
+    &.yellow {
+        background:$vetch-primary;
+        color:$vetch-secondary;
+    }
+    &.donation-callout {
+        text-align: center;
+        h2 {
+            font-size:2rem;
+            font-weight:bold;
+            margin-bottom:0;
+        }
+    }
+    &.info-callout {
+        * {
+            margin:0;
+            p {
+                display:inline;
+            }
+        }
+        .info-right {
+            text-align: right;
+        }
+        .info-callout-image {
+            padding:0 1rem 0 0;
+        }
+    }
+    &.support-callout {
+        * {
+            margin:0;
+            p {
+                display:inline;
+            }
+        }
+        .support-right {
+            text-align: right;
+        }
+        .support-message, .support-donation {
+            margin-top:0.5rem;
+        }
+        .support-donation {
+            span {
+                font-size:0.75rem;
+                font-weight:500;
+            }
+        }
+        ~ .button {
+            width: 100%;
+            margin-bottom:2rem;
+        }
+    }
+    &.charity-callout {
+        p:last-child {
+            margin-bottom:0;
+        }
+        button {
+            margin-top:1rem!important;
+        }
+    }
+    &.live-callout {
+        p:last-child {
+            margin-bottom:0;
+        }
+        .live-flag {
+            margin-bottom:0.5rem;
+        }
+    }
+    &.user-callout {
+        padding:0;
+        margin-bottom:2rem;
+        position:relative;
+        p {
+            margin:0;
+            padding:0;
+            position: relative;
+        }
+        h1 {
+            font-size:2em;
+            font-weight:bold;
+            margin-bottom:0;
+            margin-right:2rem;
+        }
+    }
+    &.share-callout {
+        margin-bottom:2rem;
+    }
+    &.event-callout {
+        overflow: auto;
+        text-align: center;
+        p {
+            display:block;
+            text-align: center;
+            margin-bottom:0;
+        }
+        .profile-image-container {
+            width:136px;
+            height:72px;
+            display:inline-block;
+            margin-top:1rem;
+            margin-left:0.6rem;
+            .profile-image {
+                float:left;
+                margin:0 -0.3rem;
+            }
+        }
+    }
+    &.form-callout {
+        margin-bottom:0.5rem!important;
+        margin-top:0.5rem;
+        padding:1rem 1.5rem 0.5rem 1.5rem;
+    }
+    &.amount-callout {
+       padding:1rem 1.5rem 1rem 1.5rem; 
+    }
+    &.fundraiser-callout {
+        padding:1.5rem 0;
+        margin-bottom:0!important;
+        p {
+            text-align: center;
+            margin-bottom:0;
+            margin-top:0.5rem;
+        }
+        .profile-image-container {
+            text-align: center;
+            .profile-image {
+                display:inline-block;
+                width:48px;
+                height:48px;
+                margin-right:0;
+                &.left-profile-image {
+                    margin-right:-4px;
+                    z-index: 1;
+                    position:relative;
+                }
+                &.right-profile-image {
+                    margin-left:-4px;
+                    z-index: 0;
+                    position:relative;
+                }
+            }
+        }
+    }
+    &.help-callout {
+        color:$vetch-secondary;
+        margin:2rem 0;
+        padding:1.5rem;
+        h4 {
+            font-size:1rem;
+            font-weight: bold;
+        }
+        &.note {
+            border:$vetch-info 2px solid;
+            -webkit-box-shadow: 0px 3px 0px 0px $vetch-info; 
+            box-shadow: 0px 3px 0px 0px $vetch-info;
+        }
+        &.question {
+            border:$vetch-secondary 2px solid;
+            -webkit-box-shadow: 0px 3px 0px 0px $vetch-secondary; 
+            box-shadow: 0px 3px 0px 0px $vetch-secondary;  
+        }
+        &.tip {
+            border:$vetch-success 2px solid;
+            -webkit-box-shadow: 0px 3px 0px 0px $vetch-success; 
+            box-shadow: 0px 3px 0px 0px $vetch-success;
+        }
+    }
+    &:last-child {
+        margin-bottom:3rem;
+    }
+    .vetch-form-group {
+        margin-top:1rem;
+        margin-bottom:0!important;
+    }
+    .content-number {
+        width:3rem;
+        height:3rem;
+        background-color:$vetch-secondary;
+        border-radius:100%;
+        display:inline-block;
+        position:relative;
+        margin-bottom:0.5rem;
+        text-align: center;
+        span {
+            display:inline-block;
+            width:3rem;
+            height:3rem;
+            position:absolute;
+            top:0;
+            left:0;
+            color:$white;
+            font-size:1.25rem;
+            line-height:3rem;
+            font-weight:bold;
+        }
+    }
+    &.event-status-banner {
+        padding-left:1.5rem;
+        button {
+            min-width:auto;
+            margin-left:-4px!important;
+            @include breakpoint(medium) {
+                margin-bottom:0!important;
+            }
+            @include breakpoint(small only) {
+                margin-bottom:0.5rem;
+            }
+        }
+        .event-banner-copy {
+            font-weight:600;
+            padding:0 1rem 1rem 1rem;
+            font-size:1.4rem;
+            overflow:hidden;
+            position:relative;
+            top:7px;
+            margin:0!important;
+            @include breakpoint(small only) {
+                padding:0 1rem 2rem 1rem;
+            }
+        }
+        .event-banner-icon {
+            float:left;
+            display:block;
+            position:relative;
+            top:10px;
+        }
+        &.not-started-banner {
+        
+        }
+        &.live-event-banner {
+            background-color:$vetch-info;
+            color:$white;
+        }
+        &.completed-event-banner {
+            background-color:$vetch-success;
+            color:$white;
+        }
+    }
+}

@@ -1,0 +1,105 @@
+$colors: $vetch-primary, $vetch-secondary, $vetch-error, $vetch-success, $vetch-info, $vetch-borders;
+$repeat: 10;
+
+@for $i from 1 through $repeat {
+    .event-card-container {
+        .large-4 {
+            &:nth-child(#{length($colors)}n+#{$i}) {
+                .event-card {
+                    .event-card-image {
+                        background-color: lighten(nth($colors, random(length($colors))), 10%);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.event-card-holder {
+    a {
+        text-decoration: none!important;
+        color:$vetch-secondary!important;
+        display:block;
+    }
+}
+.vetch-events-container {
+    margin-bottom:-3rem;
+    .event-card-container {
+        margin-top:2rem;
+        .event-card {
+            background:$white;
+            border-radius:$global-radius;
+            margin-bottom:1rem;
+            -webkit-box-shadow: 0px 0px 20px 0px rgba($vetch-secondary, .06); 
+            box-shadow: 0px 0px 20px 0px rgba($vetch-secondary, .06);
+            .event-card-image {
+                padding:1rem;
+                border-radius:$global-radius $global-radius 0 0;
+                position:relative;
+                background-size:cover;
+                background-repeat: no-repeat;
+                .live-flag {
+                    position:absolute;
+                    top:1rem;
+                    right:1rem;
+                }
+                .event-donation {
+                    padding-top:4rem;
+                    .event-donation-total, .event-donation-amount {
+                        background-color:rgba(255,255,255,0.8);
+                        border-radius:$global-radius;
+                        padding:0.3rem;
+                        text-align:center;
+                        p {
+                            padding:0;
+                            margin:0;
+                        }
+                    }
+                    .event-donation-left {
+                        padding-right:0.2rem;
+                    }
+                    .event-donation-right {
+                        padding-left:0.2rem;   
+                    }
+                }
+            }
+            .event-card-content {
+                padding:1rem;
+                .profile-image {
+                    width:52px;
+                    height:52px;
+                }
+                p {
+                    padding:0;
+                    margin:0;
+                    &.event-name {
+                        font-size:1.4rem;
+                        font-weight:700;
+                        margin-top:-5px;
+                        margin-bottom:0.5rem;
+                    }
+                    &.event-date {
+                        margin-bottom:0.5rem;
+                    }
+                }
+            }
+        }
+        .event-button {
+            padding-bottom:2.5rem;
+            padding-left:0;
+            padding-right:0;
+            button {
+                width:100%;
+                min-width:100%!important;
+                padding:1rem 0.5rem;
+                margin:0!important;
+            }
+            .event-button-left {
+                padding-right:0.2rem;
+            }
+            .event-button-right {
+                padding-left:0.2rem;
+            }
+        }
+    }
+}

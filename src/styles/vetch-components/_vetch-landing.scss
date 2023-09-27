@@ -1,0 +1,248 @@
+@-webkit-keyframes ping {
+  0%, 10% {
+    -webkit-transform: scale(0.2);
+    transform: scale(0.2);
+    opacity: 0.8;
+  }
+  90%,  100% {
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+    opacity: 0;
+  }
+}
+@keyframes ping {
+  0%, 10% {
+    -webkit-transform: scale(0.2);
+            transform: scale(0.2);
+    opacity: 0.8;
+  }
+  90%, 100% {
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+    opacity: 0;
+  }
+}
+
+section {
+    display:block;
+    padding-top:4rem;
+    padding-bottom:1rem;
+    @include breakpoint(small only) {
+        padding-bottom:0;
+    }
+    &.primary {
+        background-color:$vetch-primary;
+    }
+    &.white {
+        background-color:$white;
+        .tabs-container {
+            padding:2rem 0 0.5rem 0;
+        }
+    }
+    &.grey {
+        background-color:$vetch-lightgrey;
+    }
+    &.blue {
+        background-color:$vetch-info;
+    }
+    h1 {
+        font-size:4.8rem;
+        font-weight:bold;
+        text-align: center;
+        width:100%;
+        line-height:5.2rem;
+        position: relative;
+        z-index: 5;
+        margin-bottom:1rem;
+        @include breakpoint(small only) {
+            font-size:3.8rem;
+            line-height:4rem;
+        }
+    }
+    h2 {
+        font-size:1.75rem;
+        font-weight:normal;
+        text-align: center;
+        width:100%;
+        position: relative;
+        z-index: 5;
+        @include breakpoint(small only) {
+            padding:0 2rem;
+            font-size:1.5rem;
+        }
+    }
+    h3 {
+        font-size:2.5rem;
+        font-weight:bold;
+        text-align: center;
+        width:100%;
+        margin-bottom:0;
+    }
+    h4 {
+        font-size:1.5rem;
+        font-weight:normal;
+        text-align: center;
+        width:100%;
+        @include breakpoint(small only) {
+            padding:0 0.5rem;
+            font-size:1.5rem;
+        }
+    }
+    h5 {
+        font-weight:bold;
+        font-size:1.3rem;
+    }
+    .vetch-appicon {
+        width:3.2rem;
+        height:3.2rem;
+        background-image: url('../images/vetch-appicon.svg');
+        background-repeat:no-repeat;
+        background-position: center center;
+        background-size:contain;
+        display:inline-block;
+    }
+    .leadin-caveat {
+        padding:0 0 2rem 0!important;
+        font-size:1.2rem;
+    }
+}
+
+
+.leadin-buttons {
+    margin-bottom:1.5rem;
+    position:relative;
+    z-index: 4;
+}
+
+/* VETCH STEPS CAROUSEL */
+.vetch-steps-carousel {
+    .orbit-container {
+        @include breakpoint(medium) {
+            height:auto!important;
+        }
+        @include breakpoint(small only) {
+            height:auto;    
+        }
+    }
+    @include breakpoint(medium) {
+        .orbit-slide {
+            display:flex!important;
+            position:relative!important;
+            -o-transform: none !important;
+            -moz-transform: none !important;
+            -ms-transform: none !important;
+            -webkit-transform: none !important;
+            transform: none !important;
+            -webkit-animation: none !important;
+            -moz-animation: none !important;
+            -ms-animation: none !important;
+            animation: none !important;
+        }
+        .orbit-bullets {
+            display:none;
+        }
+    }
+    .orbit-bullets {
+        margin-top:1rem;
+        button {
+            -webkit-box-shadow:inset 0px 0px 0px 2px $vetch-secondary;
+            -moz-box-shadow:inset 0px 0px 0px 2px $vetch-secondary;
+            box-shadow:inset 0px 0px 0px 2px $vetch-secondary;
+            background:none;
+            margin:0;
+            width:1rem;
+            height:1rem;
+            &.is-active {
+                background:$vetch-secondary;
+            }
+        }
+    }
+    li {
+        .vetch-route-bg {
+            background-image: url('../images/vetch-route-bg.svg');
+            position:relative;
+            @include breakpoint(small only) {
+               background-image: url('../images/vetch-route-mobile.png'); 
+            }
+            background-repeat:no-repeat;
+            background-size: cover;
+            width:100%;
+            padding-top: 340 / 380 * 100%;
+            @include breakpoint(medium) {
+                padding-top:reset;
+            }
+            &.vetch-route-bg-01 {
+               background-position:left; 
+            }
+            &.vetch-route-bg-02 {
+                background-position:center;
+            }
+            &.vetch-route-bg-03 {
+                background-position:right;
+            }
+        }
+        .vetch-route-content {
+            width:100%;
+            text-align: center;
+            margin-top:1rem;
+            padding-left:0.9375rem;
+            padding-right:0.9375rem;
+            @include breakpoint(medium) {
+                padding:0 0.5rem;
+            }
+            .callout {
+                padding:2rem;
+                color:$vetch-secondary;
+                margin-bottom:0;
+                height:100%;
+            }
+        }
+    }
+}
+.vetch-caveat {
+    width:100%;
+    text-align: center;
+    padding:1.5rem 0 3rem 0;
+    @include breakpoint(small only) {
+        padding:1.5rem 0.5rem 3rem 0.5rem;   
+    }
+    font-size:0.9rem;
+    margin:0;
+}
+
+.vetch-features {
+    margin-top:1rem;
+    .vetch-features-img {
+        max-width:60%;
+        margin:auto;
+    }
+    .vetch-features-text {
+        text-align: center;
+        margin-top:2rem;
+        @include breakpoint(small only) {
+            margin-top:1rem;
+        }
+        margin-bottom:2rem;
+        padding:1rem 1.5rem;
+        background-color:$vetch-lightgrey;
+        border-radius:$global-radius;
+    }
+    .button-group {
+        margin-top:2rem;
+        @include breakpoint(small only) {
+            margin-top:0;
+        }
+    }
+}
+.leadin-home {
+    padding-bottom:0;
+    @include breakpoint(small only) {
+        padding-top:3rem;   
+    }
+    h2 {
+        padding-bottom:1rem;
+    }
+    .leadin-home-image {
+        text-align: center;
+    }
+}

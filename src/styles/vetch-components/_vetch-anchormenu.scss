@@ -1,0 +1,66 @@
+.vetch-anchor-menu-container {
+    position:relative;
+    background:$white;
+    padding-top:1rem;
+    margin-bottom:1.5rem;
+    @include breakpoint(small only) {
+        margin:0 0 1rem 0;
+        padding-top:0;
+    }
+    .vetch-anchor-menu {
+        padding:1.5rem 0;
+        li {
+            width: xy-cell-size(1 of 3);
+            padding-left:0.2rem;
+            padding-right:0.2rem;
+            min-width:auto!important;
+            &.is-active > a, &.is-active > button {
+                background: $vetch-secondary;
+                color:$white;
+                &:hover {
+                    background: $vetch-secondary;
+                    color: $white;
+                }
+                &:focus {
+                    outline:none;
+                    background: $vetch-secondary;
+                    color: $white;
+                    box-shadow:inset 0 0 0 1px $vetch-secondary, 0 0 0 3px $vetch-primary;
+                }
+            }
+            a, button {
+                background: $vetch-lightgrey;
+                color:$vetch-secondary;
+                border-radius:24px;
+                display:block;
+                width:100%;
+                text-align: center;
+                text-decoration: none;
+                height: 2.5rem;
+                cursor:pointer;
+                &:hover {
+                    background: darken($vetch-lightgrey, 6);
+                    color: $vetch-secondary;
+                }
+                &:focus {
+                    outline:none;
+                    background: $vetch-secondary;
+                    color: $white;
+                    box-shadow:inset 0 0 0 1px $vetch-secondary, 0 0 0 3px $vetch-primary;
+                }
+            }
+            &:first-child {
+                padding-left:0;
+            }
+            &:last-child {
+                padding-right:0;
+            }
+        }
+    }
+}
+.sticky-menu {
+    position:sticky;
+    position: -webkit-sticky; /* Safari */
+    top:0;
+    z-index: 3;
+}

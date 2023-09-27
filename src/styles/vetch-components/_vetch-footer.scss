@@ -1,0 +1,119 @@
+/* FOOTER */
+.vetch-footer {
+    padding:2rem 0 2rem 0;
+    @include breakpoint(small only) {
+        padding:1.5rem 0 1.5rem 0;
+    }
+    box-shadow: inset 0px 1px 0px $vetch-borders;
+    position: relative;
+    span {
+        font-weight:600;
+        display:block;  
+    }
+    .footer-right {
+        p {
+            text-align: right;
+        }
+        @include breakpoint(small only) {
+            margin-bottom:2rem;
+            p {
+                text-align: left;
+            }
+        }
+    }
+    .footer-social-links-container {
+        float:right;
+        @include breakpoint(small only) {
+            float:left;
+        }
+        .footer-social-link {
+            display:inline-block;
+            width:48px;
+            height: 48px;
+            margin:0 0 0 0.5rem;
+            @include breakpoint(small only) {
+                margin:0 0.5rem 0 0;
+            }
+            padding:0;
+            &.facebook {
+                background-image:url('../images/facebook.svg');
+            }
+            &.twitter {
+                background-image:url('../images/twitter.svg');
+            }
+            &.linkedin {
+                background-image:url('../images/linkedin.svg');
+            }
+            &.tiktok {
+                background-image:url('../images/tiktok.svg');
+            }
+            &.instagram {
+                background-image:url('../images/instagram.svg');
+            }
+        }
+    }
+    .vetch-love-icon {
+        display:inline-block;
+        width:18px;
+        height:18px;
+        background-image:url('../images/vetch-heart-icon.svg');
+        background-repeat:no-repeat;
+        background-size:100% 100%;
+        position:relative;
+        top:3px;
+        margin-left:0.2rem;
+        margin-right:0.2rem;
+    }
+    &.vetch-footer-appblurb {
+        text-align: center;
+        background-color:$vetch-lightgrey;
+        box-shadow: none;
+        margin-top:3rem;
+        .vetch-appicon {
+            margin:auto;
+            display:block;
+            width: 50px;
+            height:50px;
+            background-image:url('../images/vetch-appicon.svg');
+            margin-bottom:0.5rem;
+        }
+        @include breakpoint(small only) {
+            h3 {
+                font-size:1.5rem;
+            }
+        }
+    }
+}
+.download-vetch {
+    height:50px;
+    margin: auto;
+    .download-vetch-button {
+        display:inline-block;
+        width:150px;
+        height:50px;
+        border:0;
+        margin:0 0.25rem;
+        &.playstore {
+          background-image:url('../images/playstore.svg');  
+        }
+        &.appstore {
+          background-image:url('../images/appstore.svg');    
+        }
+    }
+    .vetch-qr-code {
+        position:relative;
+        top:-1.25rem;
+        height:53px;
+        margin-left:-4px;
+    }
+}
+.homepage {
+    .vetch-footer-appblurb {
+        margin-top:0;
+    }
+}
+.events {
+    .vetch-footer-appblurb {
+        background-color:$white;
+    }
+}
